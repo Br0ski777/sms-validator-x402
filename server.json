@@ -1,0 +1,10 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.Br0ski777/sms-validator",
+  "title": "SMS Validator API",
+  "description": "Validate SMS-capable phone numbers — mobile vs landline, E.164 format. x402 micropayment.",
+  "version": "1.0.0",
+  "websiteUrl": "https://github.com/Br0ski777/sms-validator-x402",
+  "repository": { "url": "https://github.com/Br0ski777/sms-validator-x402", "source": "github" },
+  "remotes": [{ "type": "sse", "url": "https://PLACEHOLDER.up.railway.app/mcp" }]
+}
