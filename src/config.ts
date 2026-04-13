@@ -29,6 +29,53 @@ Do NOT use for full phone validation with carrier lookup -- use phone_validate_n
         },
         required: ["phone"],
       },
+      outputSchema: {
+          "type": "object",
+          "properties": {
+            "phone": {
+              "type": "string",
+              "description": "Input phone number"
+            },
+            "e164": {
+              "type": "string",
+              "description": "E.164 format"
+            },
+            "valid": {
+              "type": "boolean",
+              "description": "Whether number is valid"
+            },
+            "country": {
+              "type": "object",
+              "properties": {
+                "code": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "dialCode": {
+                  "type": "string"
+                }
+              }
+            },
+            "numberType": {
+              "type": "string",
+              "description": "Number type"
+            },
+            "smsCapable": {
+              "type": "boolean",
+              "description": "SMS capability"
+            },
+            "nationalNumber": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "phone",
+            "e164",
+            "valid"
+          ]
+        },
     },
   ],
 };
