@@ -3,7 +3,7 @@ import type { ApiConfig } from "./shared";
 export const API_CONFIG: ApiConfig = {
   name: "sms-validator",
   slug: "sms-validator",
-  description: "Validate SMS-capable phone numbers. Check carrier type, detect landlines vs mobile, format E.164.",
+  description: "Validate SMS-capable phone numbers -- mobile vs landline detection, carrier type, E.164 format, SMS readiness.",
   version: "1.0.0",
   routes: [
     {
@@ -12,7 +12,15 @@ export const API_CONFIG: ApiConfig = {
       price: "$0.002",
       description: "Validate if a phone number can receive SMS",
       toolName: "sms_validate_number",
-      toolDescription: "Use this when you need to check if a phone number can receive SMS messages. Returns carrier type (mobile/landline/voip), SMS capability, E.164 format, country code, and number type. Do NOT use for full phone validation with carrier lookup — use phone_validate_number instead. Do NOT use for email validation — use email_verify_address instead.",
+      toolDescription: `Use this when you need to check if a phone number can receive SMS messages. Returns SMS capability data in JSON.
+
+Returns: 1. canReceiveSMS (boolean) 2. carrierType (mobile/landline/voip) 3. e164 formatted number 4. countryCode 5. numberType (mobile/landline/voip/toll-free) 6. carrier name.
+
+Example output: {"phone":"+14155551234","canReceiveSMS":true,"carrierType":"mobile","e164":"+14155551234","countryCode":"US","numberType":"mobile","carrier":"T-Mobile"}
+
+Use this BEFORE sending SMS campaigns, FOR filtering landlines from SMS lists, verifying 2FA phone numbers, and OTP delivery validation.
+
+Do NOT use for full phone validation with carrier lookup -- use phone_validate_number instead. Do NOT use for email validation -- use email_verify_address instead. Do NOT use for address validation -- use address_validate instead.`,
       inputSchema: {
         type: "object",
         properties: {
