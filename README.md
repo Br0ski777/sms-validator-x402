@@ -37,7 +37,7 @@ Any x402-aware client ([`@x402/fetch`](https://www.npmjs.com/package/@x402/fetch
 
 | Tool | Method | Path | Price | Description |
 |---|---|---|---|---|
-| `sms_validate_number` | POST | `/api/validate` | $0.002 | Validate if a phone number can receive SMS |
+| `sms_validate_number` | POST | `/api/validate` | $0.005 | Validate if a phone number can receive SMS |
 
 ### `sms_validate_number`
 
