@@ -9,7 +9,7 @@ export const API_CONFIG: ApiConfig = {
     {
       method: "POST",
       path: "/api/validate",
-      price: "$0.002",
+      price: "$0.005",
       description: "Validate if a phone number can receive SMS",
       toolName: "sms_validate_number",
       toolDescription: `Use this when you need to check if a phone number can receive SMS messages. Returns SMS capability data in JSON.
